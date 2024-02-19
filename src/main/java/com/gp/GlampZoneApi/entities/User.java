@@ -1,7 +1,7 @@
 package com.gp.GlampZoneApi.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 
 import java.time.LocalDate;
 
@@ -10,6 +10,7 @@ import java.time.LocalDate;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUser;
 
     @Column(nullable = false)
@@ -18,11 +19,14 @@ public class User {
     @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false, unique = true)
+    private String cellPhone;
+
     @Column(nullable = false)
-    private String passwordHash; // Almacenar contraseña encriptada
+    private String password;
 
     @Temporal(TemporalType.DATE)
     private LocalDate birthDate;
@@ -30,26 +34,23 @@ public class User {
     @Temporal(TemporalType.DATE)
     private LocalDate registerDate;
 
-    // private String profilePicture;
+    private String profilePicture;
 
     @Column(nullable = false)
     private String location;
 
     private boolean status;
 
-    @ManyToOne
-    @JoinColumn(name = "idRol")
-    private Rol rol;
 
     public User() {
         this.registerDate = LocalDate.now();
     }
 
-    public User(String firstName, String lastName, String email, String passwordHash) {
+    public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.passwordHash = passwordHash;
+        this.password = password;
         this.registerDate = LocalDate.now();
     }
 

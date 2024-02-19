@@ -1,5 +1,6 @@
-package com.gp.GlampZoneApi.entities;
+package com.gp.GlampZoneApi.services;
 
+import com.gp.GlampZoneApi.entities.Multimedia;
 import com.gp.GlampZoneApi.repositories.MultimediaRepository;
 import jakarta.persistence.*;
 import lombok.Data;

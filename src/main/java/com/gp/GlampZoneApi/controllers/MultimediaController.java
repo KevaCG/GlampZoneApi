@@ -1,7 +1,7 @@
 package com.gp.GlampZoneApi.controllers;
 
 import com.gp.GlampZoneApi.entities.Multimedia;
-import com.gp.GlampZoneApi.entities.MultimediaService;
+import com.gp.GlampZoneApi.services.MultimediaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;

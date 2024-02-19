@@ -9,13 +9,9 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    // Consultar usuarios por ID
-    @Query("SELECT us FROM User us WHERE us.idUser = :idUser")
-    public User findByUserDni(@Param("idUser") Long idUser);
-
     // Consultar usuarios por Email
     @Query("SELECT us FROM User us WHERE us.email = :email")
-    public List<User> findByUserEmail(@Param("email") String email);
+    public List<User> findByEmail(@Param("email") String email);
 
     // Consultar usuarios por Nombre y Apellido
     @Query("SELECT us FROM User us WHERE us.firstName = :firstName")

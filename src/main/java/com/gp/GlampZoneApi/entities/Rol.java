@@ -1,17 +1,16 @@
 package com.gp.GlampZoneApi.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 
-@Entity
 @Data
-
+@Entity
 public class Rol {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idRol;
+    private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String rolKey;
+    @Column(nullable = false)
+    private String rolName;
 }
