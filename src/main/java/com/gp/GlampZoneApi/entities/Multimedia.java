@@ -8,13 +8,13 @@ import lombok.Data;
 
 public class Multimedia {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMultimedia;
 
-    @Column(nullable = false)
-    private String picture;
+    // Se cambia la ruta de la imagen a un String
+    private String imageUrl;
 
     @ManyToOne
-    @JoinColumn (name = "Property")
+    @JoinColumn(name = "Property")
     private Property idProperty;
 }
